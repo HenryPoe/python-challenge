@@ -61,3 +61,12 @@ print(f"Total: ${netProfit}")
 print("Average Change: ${:.2f}" .format(totalChanges/len(changes)))
 print(f"Greatest Increase in Profits: {changes[largeProfitIndex][0]} (${changes[largeProfitIndex][1]})")
 print(f"Greatest Decrease in Profits: {changes[largeLossIndex][0]} (${changes[largeLossIndex][1]})")
+
+output_path = os.path.join('Analysis', 'output.txt')
+with open(output_path, 'w', newline='') as file:
+    file.write("Financial Analysis\n----------------------\n")
+    file.write(f"Total Months: {numMonths}\n")
+    file.write(f"Total: ${netProfit}\n")
+    file.write("Average Change: ${:.2f}\n" .format(totalChanges/len(changes)))
+    file.write(f"Greatest Increase in Profits: {changes[largeProfitIndex][0]} (${changes[largeProfitIndex][1]})\n")
+    file.write(f"Greatest Decrease in Profits: {changes[largeLossIndex][0]} (${changes[largeLossIndex][1]})\n")
