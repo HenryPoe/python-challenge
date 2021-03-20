@@ -20,7 +20,6 @@ with open(csvpath) as csvfile:
 
     # Read the header row first
     csv_header = next(csvreader)
-    #print(f"CSV Header: {csv_header}")
 
     # Read each row of data after the header
     for row in csvreader:
@@ -43,7 +42,7 @@ winningVotes = 0
 print("Election Results\n------------------------")
 print(f"Total Votes: {numVotes}\n------------------------")
 for row in voteCounter:
-    print("{}: {:.2f}% ({})".format(row[0], row[1]/numVotes*100, row[1]))
+    print("{}: {:.3f}% ({})".format(row[0], row[1]/numVotes*100, row[1]))
     if row[1] > winningVotes:
         winner = row[0]
         winningVotes = row[1]

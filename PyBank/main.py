@@ -22,13 +22,9 @@ with open(csvpath) as csvfile:
 
     # Read the header row first
     csv_header = next(csvreader)
-    #print(f"CSV Header: {csv_header}")
 
     # Read each row of data after the header
     for row in csvreader:
-        # Print all rows of the csv
-        #print(row)
-        
         # Set the current row to the 
         currentAmount = int(row[1])
         # Add current row to netProfit
@@ -47,7 +43,6 @@ largeProfitIndex = 0
 largeLossIndex = 0
 totalChanges = 0
 for index, row in enumerate(changes):
-    #print(row)
     if row[1] > changes[largeProfitIndex][1]:
         largeProfitIndex = index
     elif row[1] < changes[largeLossIndex][1]:
