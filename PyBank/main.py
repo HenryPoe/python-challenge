@@ -6,8 +6,6 @@
 import os
 # Module for reading CSV files
 import csv
-# Module for mean
-from statistics import mean
 
 # Create the path for our data set
 csvpath = os.path.join('Resources', 'budget_data.csv')
@@ -44,14 +42,22 @@ with open(csvpath) as csvfile:
         # Set the previousAmount to the current right before moving to the next row
         previousAmount = currentAmount
 
-    for row in changes:
-        # Print all rows of the csv
-        print(row)
-
 # Calculate avg change/largest growth/largest loss
-#for row in changes:
+largeProfitIndex = 0
+largeLossIndex = 0
+totalChanges = 0
+for index, row in enumerate(changes):
+    #print(row)
+    if row[1] > changes[largeProfitIndex][1]:
+        largeProfitIndex = index
+    elif row[1] < changes[largeLossIndex][1]:
+        largeLossIndex = index
+    totalChanges += row[1]
     
 # Output
 print("Financial Analysis\n----------------------")
 print("Total Months:", numMonths)
 print(f"Total: ${netProfit}")
+print("Average Change: ${:.2f}" .format(totalChanges/len(changes)))
+print(f"Greatest Increase in Profits: {changes[largeProfitIndex][0]} (${changes[largeProfitIndex][1]})")
+print(f"Greatest Decrease in Profits: {changes[largeLossIndex][0]} (${changes[largeLossIndex][1]})")
