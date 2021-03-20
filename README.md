@@ -2,7 +2,7 @@
 
 ## PyBank
 
-* In this challenge, there is a Python script for analyzing the financial records of your company. 
+* In this challenge, there is a [Python script](PyBank/main.py) for analyzing the financial records of your company. 
 	There is a set of financial data called [budget_data.csv](PyBank/Resources/budget_data.csv). 
 	The dataset is composed of two columns: `Date` and `Profit/Losses`. (Thankfully, the company has rather lax standards for accounting so the records are simple.)
 
@@ -20,7 +20,7 @@
   
 ## PyPoll
 
-* In this challenge, there is a Python script to help a small town count all the votes in an election.
+* In this challenge, there is a [Python script](PyPoll/main.py) to help a small town count all the votes in an election.
 	There is a set of poll data called [election_data.csv](PyPoll/Resources/election_data.csv).
 	The dataset is composed of three columns: `Voter ID`, `County`, and `Candidate`. 
 
